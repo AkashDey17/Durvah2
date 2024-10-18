@@ -260,15 +260,15 @@ a {
   }
 
   .banner-content h1 {
-    font-size: 7vw; /* Larger text for smaller screens */
+    font-size: 6vw; /* Larger text for smaller screens */
   }
 
   .banner-content p {
-    font-size: 4.5vw; /* Adjust paragraph size */
+    font-size: 3.5vw; /* Adjust paragraph size */
   }
 
   .btn--primary {
-    font-size: 5vw; /* Adjust button text size */
+    font-size: 4vw; /* Adjust button text size */
     padding: 10px 20px; /* Adjust padding */
   }
 }
@@ -279,15 +279,15 @@ a {
   }
 
   .banner-content h1 {
-    font-size: 3vw; /* Further reduce for smaller screens */
+    font-size: 3.8vw; /* Further reduce for smaller screens */
   }
 
   .banner-content p {
-    font-size: 4vw;
+    font-size: 4.8vw;
   }
 
   .btn--primary {
-    font-size: 3vw;
+    font-size: 3.8vw;
   }
 }
 
@@ -295,7 +295,7 @@ a {
 /*----------------------*/
 /*section 3 starts*/
 .section3 .container {
-  padding: 68px 0px;
+  padding: 68px;
   padding-bottom: 100px;
   padding-top: 84px;
 }
