@@ -295,7 +295,6 @@ a {
 /*----------------------*/
 /*section 3 starts*/
 .section3 .container {
-  /* padding: 15px 9%; */
   padding: 68px 9%;
   padding-bottom: 100px;
 }
@@ -309,18 +308,15 @@ a {
 }
 
 .section3 .container .box-container {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 15px; */
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 
 .section3 .container .box-container .box {
-  display: flex; /* Enable Flexbox */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start; /* Distribute space between items */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background: #fff;
@@ -328,82 +324,100 @@ a {
   padding: 30px 20px;
   height: 400px;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  overflow: hidden; /* Ensure content doesn't overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
   cursor: pointer;
 }
-.section3 .container .box-container .box1 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Glance-Tile_Fortune-2%3Arad-card-full?ts=1727441474925&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-.section3 .container .box-container .box2 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Digital-Core-Glance-Image-600x848%3Arad-card-full?ts=1723488044160&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-
-.section3 .container .box-container .box3 {
-  background: url("https://dynamicmedia.accenture.com/is/content/accenture/Accenture-What-is-Cybersecurity-Glance-Image-300x212-2?ts=1726136186577&$none$&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-
-.section3 .container .box-container .box4 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-GenAI-Glance-Skim-600x848%3Arad-card-full?ts=1725500620893&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-
-.section3 .container .box-container .box5 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-People-and-Change-GlanceSkim%3Arad-card-full?ts=1721906745177&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-.section3 .container .box-container .box6 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-ESG-Reporting-Glance-Skim-600x848%3Arad-card-full?ts=1727325749951&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-.section3 .container .box-container .box7 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/RWA_Glance-Card_NBCU-Peacock_v2%3Arad-card-full?ts=1721906758001&fit=constrain&dpr=off")
-    no-repeat center center/cover;
-}
-.section3 .container .box-container .box8 {
-  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Gen-AI-TL-V2-600x848%3Arad-card-full?ts=1721906762543&fit=constrain&dpr=off")
-    no-repeat center center/cover;
+/* Pseudo-element for the background image */
+.section3 .container .box-container .box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.3s ease;
+  z-index: 1;
+  filter: blur(0); /* No blur initially */
+  transition: transform 0.5s ease, filter 0.5s ease; /* Smooth transition */
 }
 
 .section3 .container .box-container .box img {
   height: 80px;
 }
+/* Assign specific background images to each box using ::before */
+.section3 .container .box-container .box1::before {
+  background-image: url("https://dynamicmedia.accenture.com/is/image/accenture/Glance-Tile_Fortune-2%3Arad-card-full?ts=1727441474925&fit=constrain&dpr=off");
+}
 
+.section3 .container .box-container .box2::before {
+  background-image: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Digital-Core-Glance-Image-600x848%3Arad-card-full?ts=1723488044160&fit=constrain&dpr=off");
+}
+
+/* Additional boxes with their specific background images */
+.section3 .container .box-container .box3::before {
+  background-image: url("https://dynamicmedia.accenture.com/is/content/accenture/Accenture-What-is-Cybersecurity-Glance-Image-300x212-2?ts=1726136186577&$none$&fit=constrain&dpr=off");
+}
+
+.section3 .container .box-container .box4::before {
+  background-image: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-GenAI-Glance-Skim-600x848%3Arad-card-full?ts=1725500620893&fit=constrain&dpr=off");
+}
+
+.section3 .container .box-container .box5::before {
+  background-image: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-People-and-Change-GlanceSkim%3Arad-card-full?ts=1721906745177&fit=constrain&dpr=off");
+}
+.section3 .container .box-container .box6::before {
+  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-ESG-Reporting-Glance-Skim-600x848%3Arad-card-full?ts=1727325749951&fit=constrain&dpr=off");
+}
+.section3 .container .box-container .box7::before {
+  background: url("https://dynamicmedia.accenture.com/is/image/accenture/RWA_Glance-Card_NBCU-Peacock_v2%3Arad-card-full?ts=1721906758001&fit=constrain&dpr=off");
+}
+.section3 .container .box-container .box8::before {
+  background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Gen-AI-TL-V2-600x848%3Arad-card-full?ts=1721906762543&fit=constrain&dpr=off");
+}
+
+/* On hover, apply a blur to the background image */
+.section3 .container .box-container .box:hover::before {
+  filter: blur(1.5px);
+}
 .section3 .container .box-container .box h3 {
-  /* color: #444; */
   color: #fff;
   font-size: 22px;
   padding: 10px 0;
 }
 
 .section3 .container .box-container .box p {
-  /* color: #777; */
   color: #fff;
   font-size: 15px;
   line-height: 1.8;
 }
 
 .section3 .container .box-container .box .btn {
-  /* margin-top: 10px; */
   display: inline-block;
-  background: #333;
   color: #fff;
   font-size: 17px;
   border-radius: 5px;
   padding: 8px 25px;
-  /**/
-  padding: 12px 25px; /* Increase padding for better touch target */
-  width: 100%; /* Make button full width */
-  text-align: center; /* Center text in button */
-  margin-top: auto; /* Push button to the bottom */
+
+  padding: 12px 25px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  z-index: 2;
+  opacity: 0; /* Hide the button initially */
+  visibility: hidden; /* Ensure it's not visible */
+  transform: translateY(20px); /* Optional: initial position */
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+/* On hover, show the button */
+.section3 .container .box-container .box:hover .btn {
+  opacity: 1; /* Make the button visible */
+  visibility: visible; /* Ensure it is visible */
+  transform: translateY(0); /* Reset position */
 }
 
 .section3 .container .box-container .box .btn:hover {
   letter-spacing: 1px;
-  background: #444; /* Slightly lighter background on hover */
+  /* background: #444; */
 }
 
 .section3 .container .box-container .box:hover {
@@ -413,66 +427,41 @@ a {
 
 @media (max-width: 1200px) {
   .section3 .container .box-container {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* 3 cards per row for medium screens */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
   .section3 .container .box-container {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2 cards per row for small screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .section3 .container .box-container {
-    grid-template-columns: 1fr; /* 1 card per row for extra small screens */
+    grid-template-columns: 1fr;
   }
 }
-
-/* @media (max-width: 768px) {
-  .section3 .container {
-    padding: 20px;
-  }
-} */
 
 .section3 .container .box-container .box h3,
 .section3 .container .box-container .box p {
-  opacity: 0; /* Hide text initially */
-  visibility: hidden; /* Prevent interaction when hidden */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  z-index: 2; /* Ensure the content stays above the background */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 }
+
 .section3 .container .box-container .box:hover h3,
 .section3 .container .box-container .box:hover p {
-  opacity: 1; /* Show text on hover */
-  visibility: visible; /* Make text visible */
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
-@media (max-width: 770px) {
-  /* .section3 .container {
-    padding: ;
-  } */
-}
+/*-----------------------------------------------*/
 
 /*section 3 ends*/
-
-/* .section3 .container .box-container .box .btn {
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  font-size: 17px;
-  border-radius: 5px;
-  padding: 12px 25px;
-  width: 100%;
-  text-align: center;
-  margin-top: auto;
-  transition: background 0.3s ease;
-} */
 
 /*---------------------------------------*/
 /*-------------section 4--------------------------*/
